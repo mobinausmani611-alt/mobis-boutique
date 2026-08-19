@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mobi's Boutique | Women's Fashion</title>
+
+<meta name="description"
+content="Mobi's Boutique - Elegant, trendy and affordable women's fashion.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #30242a;
+    background: #fff8f6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top-bar {
+    background: #2b2025;
+    color: white;
+    text-align: center;
+    padding: 9px;
+    font-size: 13px;
+}
+
+.navbar {
+    background: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 15px rgba(0,0,0,.06);
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #c9828e;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+}
+
+.hero {
+    min-height: 75vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 70px 8%;
+    background: linear-gradient(120deg, #f4ddd9, #fff8f6);
+}
+
+.hero-text h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 6vw, 75px);
+    line-height: 1;
+    margin: 15px 0 20px;
+}
+
+.hero-text p {
+    color: #75666c;
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 25px;
+    border-radius: 30px;
+    background: #2b2025;
+    color: white;
+    font-size: 14px;
+}
+
+.btn.secondary {
+    background: white;
+    color: #2b2025;
+    border: 1px solid #ddd;
+    margin-left: 8px;
+}
+
+.hero-image {
+    height: 480px;
+    border-radius: 180px 180px 25px 25px;
+    background: linear-gradient(145deg, #d59ba2, #f1d5ce);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 35px;
+    text-align: center;
+}
+
+section {
+    padding: 75px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #75666c;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.product {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,.06);
+}
+
+.product-image {
+    height: 300px;
+    background: linear-gradient(145deg, #ead0cc, #f8ece8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    color: #634d54;
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.label {
+    display: inline-block;
+    background: #f2dfe1;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.promo {
+    background: #2b2025;
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.promo h2 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.promo p {
+    color: #ddd;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image {
+    min-height: 350px;
+    border-radius: 25px;
+    background: #ead0cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, serif;
+    font-size: 50px;
+}
+
+.about-text h2 {
+    font-family: Georgia, serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #75666c;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.contact {
+    text-align: center;
+}
+
+footer {
+    background: white;
+    padding: 50px 7%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 30px;
+    border-top: 1px solid #eee;
+}
+
+footer p,
+footer a {
+    color: #75666c;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.copyright {
+    background: white;
+    border-top: 1px solid #eee;
+    text-align: center;
+    padding: 18px;
+    font-size: 12px;
+    color: #888;
+}
+
+@media(max-width: 850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        margin-top: 40px;
+        height: 350px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 50px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+✨ New Collection — Elegant Styles for Every Occasion
+</div>
+
+<nav class="navbar">
+
+<div class="logo">
+Mobi's <span>Boutique</span>
+</div>
+
+<div class="nav-links">
+<a href="#shop">Shop</a>
+<a href="#new">New Arrivals</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="hero-text">
+
+<p>WOMEN'S FASHION</p>
+
+<h1>
+Style that speaks for you.
+</h1>
+
+<p>
+Discover elegant, trendy and affordable fashion pieces
+curated for women who love to look and feel their best.
+</p>
+
+<a class="btn" href="#shop">
+Shop Collection
+</a>
+
+<a class="btn secondary" id="heroWhatsApp" href="#">
+WhatsApp Us
+</a>
+
+</div>
+
+<div class="hero-image">
+Mobi's<br>
+Boutique
+</div>
+
+</header>
+
+
+<!-- PRODUCTS -->
+
+<section id="shop">
+
+<div class="section-title">
+
+<h2>
+Shop Our Collection
+</h2>
+
+<p>
+Fresh looks. Timeless elegance.
+</p>
+
+</div>
+
+<div class="products">
+
+<div class="product">
+
+<div class="product-image">
+Elegant Rose Dress
+</div>
+
+<div class="product-info">
+
+<span class="label">
+NEW
+</span>
+
+<h3>
+Elegant Rose Dress
+</h3>
+
+<p class="price">
+AED 149
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+Satin Evening Dress
+</div>
+
+<div class="product-info">
+
+<span class="label">
+BESTSELLER
+</span>
+
+<h3>
+Satin Evening Dress
+</h3>
+
+<p class="price">
+AED 179
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+Classic Black Dress
+</div>
+
+<div class="product-info">
+
+<span class="label">
+NEW
+</span>
+
+<h3>
+Classic Black Dress
+</h3>
+
+<p class="price">
+AED 159
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+Floral Summer Dress
+</div>
+
+<div class="product-info">
+
+<span class="label">
+POPULAR
+</span>
+
+<h3>
+Floral Summer Dress
+</h3>
+
+<p class="price">
+AED 129
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+Modest Maxi Dress
+</div>
+
+<div class="product-info">
+
+<span class="label">
+NEW
+</span>
+
+<h3>
+Modest Maxi Dress
+</h3>
+
+<p class="price">
+AED 169
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+Premium Party Dress
+</div>
+
+<div class="product-info">
+
+<span class="label">
+PREMIUM
+</span>
+
+<h3>
+Premium Party Dress
+</h3>
+
+<p class="price">
+AED 229
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+Everyday Chic Dress
+</div>
+
+<div class="product-info">
+
+<span class="label">
+POPULAR
+</span>
+
+<h3>
+Everyday Chic Dress
+</h3>
+
+<p class="price">
+AED 119
+</p>
+
+</div>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">
+Luxe Abaya
+</div>
+
+<div class="product-info">
+
+<span class="label">
+NEW
+</span>
+
+<h3>
+Luxe Abaya
+</h3>
+
+<p class="price">
+AED 199
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROMO -->
+
+<section id="new">
+
+<div class="promo">
+
+<h2>
+New Season. New You.
+</h2>
+
+<p>
+Explore our latest arrivals and find your next favourite look.
+</p>
+
+<a class="btn secondary" href="#shop">
+Explore Collection
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="about">
+
+<div class="about-image">
+MB
+</div>
+
+<div class="about-text">
+
+<h2>
+Fashion made to feel special.
+</h2>
+
+<p>
+Welcome to Mobi's Boutique, your destination for stylish
+women's fashion.
+</p>
+
+<p>
+We believe great style should feel effortless, confident
+and accessible.
+</p>
+
+<p>
+From everyday elegance to statement outfits, our collection
+is carefully selected to help you dress beautifully for every
+moment.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact">
+
+<div class="section-title">
+
+<h2>
+Ready to Shop?
+</h2>
+
+<p>
+Message us on WhatsApp for orders, sizes and availability.
+</p>
+
+<a class="btn" id="contactWhatsApp" href="#">
+Order on WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div>
+
+<div class="logo">
+Mobi's <span>Boutique</span>
+</div>
+
+<p>
+Elegant • Trendy • Affordable
+<br>
+Women's fashion for every occasion.
+</p>
+
+</div>
+
+
+<div>
+
+<strong>
+Quick Links
+</strong>
+
+<p>
+<a href="#shop">Shop</a>
+<br>
+<a href="#new">New Arrivals</a>
+<br>
+<a href="#about">About Us</a>
+</p>
+
+</div>
+
+
+<div>
+
+<strong>
+Contact
+</strong>
+
+<p>
+WhatsApp: +91 77 385 23718
+<br>
+Instagram: @mobisboutique
+</p>
+
+</div>
+
+</footer>
+
+<div class="copyright">
+
+© 2026 Mobi's Boutique. All rights reserved.
+
+</div>
+
+
+<script>
+
+/*
+CHANGE THIS TO YOUR REAL WHATSAPP NUMBER.
+
+Example:
+917738523718
+
+Do NOT put +, spaces or brackets.
+*/
+
+const whatsappNumber = "917738523718";
+
+const message =
+"Hello Mobi's Boutique, I would like to see your latest collection.";
+
+const whatsappURL =
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+encodeURIComponent(message);
+
+document.getElementById("heroWhatsApp").href = whatsappURL;
+
+document.getElementById("contactWhatsApp").href = whatsappURL;
+
+</script>
+
+</body>
+</html>
